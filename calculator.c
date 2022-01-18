@@ -26,7 +26,7 @@ void S();
 void O();
 
 
-char input[100];
+char input[10];
 int i, error;
 
 main() {
@@ -59,9 +59,31 @@ void Start() {
 }
 
 void E() {
-     
+    V();
+    if(input[i] == '+' || input[i] == '-' || input[i] == '*' || input[i] == '/'){
+        O();
+        E();
+    }
 }
 
+
+void V() {
+    if(input[i] == '+' || input[i] == '-'){
+        S();
+        N();
+    } else {
+        N();
+    }
+}
+
+
+void N() {
+    U();
+    if(input[i] == '.'){
+        i++;
+        U();
+    }
+}
 
 void U() {
     D();
