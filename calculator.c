@@ -80,7 +80,6 @@ void V() {
 void N() {
     U();
     if(input[i] == '.'){
-        i++;
         U();
     }
 }
