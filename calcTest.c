@@ -6,7 +6,7 @@
 
 
 /* generate a parser for the following grammar
-S -> E=
+C -> E=
 E -> V | VOE
 V -> N | SN
 N -> U | U.U
@@ -16,7 +16,7 @@ S -> + | -
 O -> + | - | * | / 
 */
 
-void Start();
+void C();
 void E();
 void V();
 void N();
@@ -37,7 +37,7 @@ main() {
     printf("Enter an arithmetic expression   :  "); 
     gets(input);
     
-    Start();
+    C();
     
     if (strlen(input) == i && error == 0){
         printf("\nThe string %s is accepted by the defined grammer\n", input);
@@ -48,7 +48,7 @@ main() {
 }
 
 
-void Start() {
+void C() {
     E();
     if(input[i] == '='){
         i++;
@@ -80,6 +80,7 @@ void V() {
 void N() {
     U();
     if(input[i] == '.'){
+        printf("%c accepted\n",input[i]);
         i++;
         U();
     }
@@ -94,6 +95,7 @@ void U() {
 
 void D(){
     if(isdigit(input[i])){
+        printf("%c accepted\n",input[i]);
         i++;
     }
     else{
@@ -103,6 +105,7 @@ void D(){
 
 void S(){
     if(input[i] == '+' || input[i] == '-'){
+        printf("%c accepted\n",input[i]);
         i++;
     }
     else{
@@ -113,6 +116,7 @@ void S(){
 
 void O() {
     if(input[i] == '+' || input[i] == '-' || input[i] == '*' || input[i] == '/'){
+        printf("%c accepted\n",input[i]);
         i++;
     }
     else{
