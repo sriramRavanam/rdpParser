@@ -34,16 +34,16 @@ main() {
     i = 0;
     error = 0;
     
-    printf("Enter an arithmetic expression   :  "); 
+    printf("Enter an arithmetic expression for a calculator  :  "); 
     gets(input);
     
     C();
     
     if (strlen(input) == i && error == 0){
-        printf("\nThe string %s is accepted by the defined grammer\n", input);
+        printf("\nThe string %s is accepted by the defined grammer\nCan be calculated.\n", input);
     }
     else{
-        printf("\nThe string %s is rejected as it isn't a part of the defined grammer\n", input);
+        printf("\nThe string %s is rejected as it isn't a part of the defined grammer\nCannot be calculated.\n", input);
     }
 }
 
